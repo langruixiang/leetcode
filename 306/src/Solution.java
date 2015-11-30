@@ -1,52 +1,37 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
 public class Solution {
     public boolean isAdditiveNumber(String num) {
     	if(num == null || num.length() < 3){
     		return false;
     	}
     	
-    	List<Set<Integer>> list= new ArrayList<>();
-    	Set<Integer> set = new HashSet<Integer>();
-    	set.add(0);
-    	
-    	list.add(set);
-    	
-    	for(int i = 1; i < num.length(); i++){
-    		Set<Integer> setTmp = new HashSet<>();    		
-    		for(int j = i - 1; j >= 0; j--){
-    			String subString = num.substring(j, i);
-    			if(subString.startsWith("0") && subString.length() > 1){
-    				continue;
+    	for(int i = 1; i <= (num.length() + 1) / 2; i++){
+    		String tmp = num.substring(0,i);
+    		if(tmp.length() >= 2 && tmp.startsWith("0")){
+    			break;
+    		}
+    		
+    		long num1 = Long.parseLong(tmp);
+    		for(int j = i + 1; j < num.length(); j++){
+    			tmp = num.substring(i, j);
+    			if(tmp.length() >= 2 && tmp.startsWith("0")){
+        			break;
+        		}
+    			
+    			long num2 = Long.parseLong(tmp);
+    			
+    			String num3 = String.valueOf(num1 + num2);
+    			String prefix = "" + num1 + num2 + num3;
+
+    			while(prefix.length() < num.length() && num.startsWith(prefix)){
+    				long num1tmp = num2;
+    				num2 = Long.parseLong(num3);
+    				num3 = String.valueOf(num1tmp + num2);
+    				prefix += num3;
     			}
     			
-    			int numTmp = Integer.parseInt(subString);
-    			
-    			Iterator<Integer> iterator = list.get(j).iterator();
-    			while(iterator.hasNext()){
-    				int sum = numTmp + iterator.next();
-    				setTmp.add(sum);
-    				System.out.print(sum + " ");
+    			if(prefix.equals(num)){
+    				return true;
     			}    			
-    		}
-    		
-    		list.add(setTmp);
-    		System.out.println();
-    	}
-    	
-    	for(int i = num.length() - 1; i >= 0; i--){
-    		String subString = num.substring(i);
-    		if(subString.startsWith("0") && subString.length() > 1){
-    			continue;
-    		}
-    		
-    		int numTmp = Integer.parseInt(subString);
-    		if(list.get(i).contains(numTmp)){
-    			return true;
     		}
     	}
     	
