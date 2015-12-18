@@ -6,67 +6,9 @@ import java.util.Queue;
 import java.util.Set;
 
 public class Solution {
-//	private int minHeight = Integer.MAX_VALUE;
-//	private List<List<Integer>> edge = new ArrayList<List<Integer>>();	
-//	private int[] heights;
-//	
-//	private List<Integer> ret = new ArrayList<>();
-//	
-//	private int getHeight(int root,int height,Set<Integer> visited){
-//		visited.add(root);
-//		
-//		List<Integer> sons = edge.get(root);
-//		
-//		int ret = height;
-//		for(int i : sons){
-//			if(!visited.contains(i)){
-//				int h = getHeight(i, height + 1,visited);
-//				if(h > ret){
-//					ret = h;
-//				}
-//			}
-//		}
-//		
-//		visited.remove(root);
-//		return ret;		
-//	}
-//	
-//    public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-//        for(int i = 0; i < n; i++){
-//        	edge.add(new ArrayList<>());
-//        }
-//        
-//        heights = new int[n];
-//        
-//        for(int i = 0; i < edges.length; i++){
-//        	int from = edges[i][0];
-//        	int to = edges[i][1];
-//        	
-//        	edge.get(from).add(to);
-//        	edge.get(to).add(from);
-//        }
-//        
-//        
-//        Set<Integer> visited = new HashSet<>();
-//        for(int i = 0; i < n; i++){
-//        	int height = getHeight(i,1,visited);
-//        	if( height < minHeight){
-//        		minHeight = height;
-//        	}
-//        	
-//        	heights[i] = height;
-//        }
-//        
-//        for(int i = 0; i < n; i++){
-//        	if(heights[i] == minHeight){
-//        		ret.add(i);
-//        	}
-//        }
-//        
-//        return ret;
-//    }
 
-	private void bfs(List<List<Integer>> edge,int root,int[] distance,int[] pre){
+	private int bfs(List<List<Integer>> edge,int root,int[] distance,int[] pre){
+	    int ret = 0;
 		Set<Integer> visited = new HashSet<>();
 		
 		distance[root] = 0;
@@ -85,9 +27,12 @@ public class Solution {
 					pre[son] = father;
 					queue.add(son);
 					visited.add(son);
+					ret = son;
 				}
 			}		
-		}		
+		}	
+		
+		return ret;
 	}
 	
 	public List<Integer> findMinHeightTrees(int n, int[][] edges) {
@@ -107,25 +52,9 @@ public class Solution {
 		int[] dis = new int[n];
 		int[] pre = new int[n];
 		
-		bfs(edge,0,dis,pre);
-		int max = Integer.MIN_VALUE;
-		int u = 0;
-		for(int i = 0; i < dis.length; i++){
-			if(dis[i] > max){
-				max = dis[i];
-				u = i;
-			}
-		}
+		int u = bfs(edge,0,dis,pre);
 		
-		bfs(edge,u,dis,pre);
-		int v = 0;
-		max = Integer.MIN_VALUE;
-		for(int i = 0; i < dis.length; i++){
-			if(dis[i] > max){
-				max = dis[i];
-				v = i;
-			}
-		}
+		int v = bfs(edge,u,dis,pre);
 		
 		int p = v;
 		List<Integer> longestPath = new ArrayList<>();
