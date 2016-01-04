@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Readme</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>HiHocoder题目链接：<a href="http://hihocoder.com/contest/hiho24/problem/1">#1089 : 最短路径·二：Floyd算法</a></h2>
+<blockquote>
+<h3>描述</h3>
+<p>万圣节的中午，小Hi和小Ho在吃过中饭之后，来到了一个新的鬼屋！鬼屋中一共有N个地点，分别编号1..N，这N个地点之间互相有一些道路连通，两个地点之间可能有多条道路连通，但是并不存在一条两端都是同一个地点的道路。由于没有肚子的压迫，小Hi和小Ho决定好好的逛一逛这个鬼屋，逛着逛着，小Hi产生了这样的问题：鬼屋中任意两个地点之间的最短路径是多少呢？提示：其实如果你开心的话，完全可以从每个节点开始使用Dijstra算法<em>(:з」∠)</em>。</p>
+<h3>输入</h3>
+<p>每个测试点（输入文件）有且仅有一组测试数据。</br>
+在一组测试数据中：</br>
+第1行为2个整数N、M，分别表示鬼屋中地点的个数和道路的条数。</br>
+接下来的M行，每行描述一条道路：其中的第i行为三个整数u_i, v_i, length_i，表明在编号为u_i的地点和编号为v_i的地点之间有一条长度为length_i的道路。</br>
+对于100%的数据，满足N&lt;=10^2，M&lt;=10^3, 1 &lt;= length_i &lt;= 10^3。</br>
+对于100%的数据，满足迷宫中任意两个地点都可以互相到达。</br></p>
+<h3>输出</h3>
+<p>对于每组测试数据，输出一个N*N的矩阵A，其中第i行第j列表示，从第i个地点到达第j个地点的最短路径的长度，当i=j时这个距离应当为0。</p>
+<h3>样例输入</h3>
+<pre><code>5 12
+1 2 967
+2 3 900
+3 4 771
+4 5 196
+2 4 788
+3 1 637
+1 4 883
+2 4 82
+5 2 647
+1 4 198
+2 4 181
+5 2 665
+</code></pre>
+
+<h3>样例输出</h3>
+<pre><code>0 280 637 198 394 
+280 0 853 82 278 
+637 853 0 771 967 
+198 82 771 0 196 
+394 278 967 196 0 
+</code></pre>
+
+</blockquote>
+<h2>分析</h2>
+<p>其实执行n遍Dijkstra算法确实可以解决问题，但是HiHoCoder一句话很有道理：</p>
+<blockquote>
+<p>O(N^2)的算法执行N次就够了，的确不用学一个O(N^3)的算法！但是，如果这个算法只有5行呢？</p>
+</blockquote>
+<p><strong>Floyd流程：</strong></br>
+1. 初始化:用minDis[i,j]代表i与j的最短距离，初始化minDis[i,j]表示在不借助任何节点的情况下，i与j的最短距离，即，i与j最短的直接相连的边的长度。</br>
+2. 松弛，用第0个点松弛任意两个节点的距离。在用第0个点松弛的基础上，加上用第1个点松弛。依次加入新的点，直至所有点均加入。</br>
+只有4行伪代码：</p>
+<pre><code>for(k = 0; k &lt; N; k++)
+    for(i = 0; i &lt; N; i++)
+        for(j = 0; j &lt; N; j++)
+            minDis[i,j] = min(minDis[i,k] + minDis[k,j], minDis[i,j];
+</code></pre>
+
+<h2>源代码：</h2>
+<pre><code>import java.util.*;
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner scanner = null;
+
+        scanner = new Scanner(System.in);
+        int N,M;
+        N = scanner.nextInt();
+        M = scanner.nextInt();
+
+        int[][] minDistance = new int[N][N];
+        for(int i = 0; i &lt; N; i++){
+            for(int j = 0; j &lt; N; j++){
+                if(i == j){
+                    minDistance[i][j] = 0;
+                }else{
+                    minDistance[i][j] = Integer.MAX_VALUE;
+                }
+            }
+        }
+
+        for(int i = 0; i &lt; M; i++){
+            int u = scanner.nextInt() - 1;
+            int v = scanner.nextInt() - 1;
+            int dis = scanner.nextInt();
+
+            minDistance[u][v] = minDistance[v][u] = Math.min(minDistance[u][v],dis);
+        }//初始化：有边相连的节点距离为最短相连边的长度，没有边相连的距离为正无穷
+
+        scanner.close();
+
+        for(int k = 0; k &lt; N; k++){//依次加入第0,1...N个点松弛最短距离
+            for(int i = 0; i &lt; N; i++){
+                for(int j = 0; j &lt; N; j++){
+                    if(minDistance[i][k] != Integer.MAX_VALUE &amp;&amp; minDistance[k][j] != Integer.MAX_VALUE){
+                        minDistance[i][j] = Math.min(minDistance[i][j], minDistance[i][k] + minDistance[k][j]);
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i &lt; N; i++){
+            for(int j = 0; j &lt; N; j++){
+                System.out.print(minDistance[i][j] + &quot; &quot;);
+            }
+            System.out.println();
+        }
+
+    }
+
+}
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
